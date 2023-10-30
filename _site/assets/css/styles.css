@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap");
-/* Polar Night */
-/* Snow Storm */
-/* Frost */
-/* Aurora */
 .current { color: #eceff4; }
 
 .left { text-align: left; float: left; }
@@ -18,7 +14,7 @@
 
 hr { color: #434c5e; }
 
-body { background-color: #2E3440; font-family: 'Roboto', sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+body { background-color: #2e3440; font-family: 'Roboto', sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
 
 main { padding: 3% 25% 0% 25%; }
 
