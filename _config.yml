@@ -3,6 +3,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+repository: rileywheadon/rileywheadon.github.io
 domain: rileywheadon.github.io      
 url: https://rileywheadon.github.io 
 sass:
