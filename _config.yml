@@ -1,0 +1,9 @@
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+domain: rileywheadon.github.io      
+url: https://rileywheadon.github.io 
+sass:
+    sass_dir: _sass

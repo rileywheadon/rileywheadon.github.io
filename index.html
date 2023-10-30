@@ -1,0 +1,16 @@
+---
+layout: default
+title: Home
+---
+
+<h1>Posts</h1>
+
+{% for item in site.data.posts %}
+<div class="post">
+	<p class = "post-date">{{ item.date }}</p>
+	<a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
+	  {{ item.name }}
+	</a>
+</div>
+{% endfor %}
+
