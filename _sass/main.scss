@@ -52,6 +52,7 @@ $nord15: #b48ead;
 hr {
 	color: $nord2;
 }
+
 body {
 	background-color: $nord0;
 	font-family: 'Roboto', sans-serif;
@@ -67,6 +68,11 @@ main {
 h1 {
 	color: $nord5;
 	font-size: 26px;
+}
+
+h2 {
+	color: $nord4;
+	font-size: 24px;
 }
 
 a {

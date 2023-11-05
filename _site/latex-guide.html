@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>A Beginner's Guide to LaTeX</title>
+		<title>Typesetting Mathematics using LaTeX</title>
 		<link rel="stylesheet" href="/assets/css/styles.css">
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 		<script id="MathJax-script" async
@@ -21,9 +21,117 @@
 </div>
 <br>
 
-			<h1 id="a-beginners-guide-to-latex">A Beginner’s Guide to LaTeX</h1>
+			<h1 id="typeset-mathematics-using-latex">Typeset Mathematics using LaTeX</h1>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>If you read my <a href="why-obsidian.html">previous post</a> about why I use <a href="https://obsidian.md/">Obsidian</a>, you might be curious how to actually use LaTeX. This guide is intended for people using Obsidian or another markdown based text editor.</p>
+
+<h2 id="what-is-latex">What is LaTeX?</h2>
+
+<p><strong>LaTeX</strong> is based on <strong>TeX</strong>, a <em>typesetting system</em> developed by Donald Knuth. Put simply, LaTeX is a way to convert plain text into an enormous variety of scientific symbols. It does this by using <strong>Commands</strong>, which start with a backslash. A command may accept one or more <strong>Arguments</strong>, as shown below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\command{argument1}{argument2}
+</code></pre></div></div>
+<p>Commands can also be nested (placed inside each other). Remember to close all the curly brackets, otherwise it will cause an error.</p>
+
+<h2 id="math-mode">Math Mode</h2>
+
+<p>When taking notes in Obsidian, there are two ways begin typesetting using LaTeX:</p>
+<ul>
+  <li>Enter <strong>Inline Math Mode</strong> by wrapping LaTeX commands in single dollar signs. For example, if I type <code class="language-plaintext highlighter-rouge">$3x^2 + 2x + 4$</code> in an Obsidian note, it will look like this: \(3x^2 + 2x + 4\). Inline math mode is useful for including a few mathematical symbols without breaking the flow of your writing.</li>
+  <li>Enter <strong>Display Math Mode</strong> by wrapping LaTeX commands in double dollar signs. If I instead type <code class="language-plaintext highlighter-rouge">$$3x^2 + 2x + 4$$</code> into an Obsidian note, the equation will appear centered and on a new line, like this:
+\[3x^2 +2x + 4\]</li>
+</ul>
+
+<h2 id="basic-commands">Basic Commands</h2>
+
+<p>This section includes some of the more useful commands for symbols used in high school math and science classes. The examples will be shown in display math mode, but they can be used in inline math mode as well.</p>
+
+<p><strong>Polynomial Functions</strong></p>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">^</code> symbol to write “to the power of”. By using curly brackets, you can add multiple characters.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$ x^4, x^{3x + 2} $$
+</code></pre></div></div>
+<p>\[ x^4, x^{3x + 2} \]</p>
+
+<p><strong>Rational Functions</strong></p>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">\sqrt{}</code> command to write the square root symbol. You can also use <code class="language-plaintext highlighter-rouge">\sqrt[n]{}</code> to write an n-th root, as shown below.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$ \sqrt{4}, \sqrt[6]{8} $$
+</code></pre></div></div>
+<p>\[ \sqrt{4}, \sqrt[6]{8} \]</p>
+
+<p><strong>Fractions</strong></p>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">\frac{}{}</code> command to create a fraction.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$ \frac{x^2}{\sqrt{4}} $$
+</code></pre></div></div>
+<p>\[\frac{x^2}{\sqrt{4}} \]</p>
+
+<p><strong>Greek Letters</strong></p>
+
+<p>All of the greek letters have commands in LaTeX (like <code class="language-plaintext highlighter-rouge">\theta</code> and <code class="language-plaintext highlighter-rouge">\pi</code>). Some greek letters also have capital variants (i.e. <code class="language-plaintext highlighter-rouge">\Theta</code> is different than <code class="language-plaintext highlighter-rouge">\theta</code>).</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$ \theta, \Theta, \pi $$
+</code></pre></div></div>
+<p>\[\theta, \: \Theta, \: \pi\]</p>
+
+<p><strong>Trigonometric Functions</strong></p>
+
+<p>The commands <code class="language-plaintext highlighter-rouge">\sin</code>, <code class="language-plaintext highlighter-rouge">\cos</code>, and <code class="language-plaintext highlighter-rouge">\tan</code> are used to write the trigonometric functions. There is also <code class="language-plaintext highlighter-rouge">\arcsin</code>, <code class="language-plaintext highlighter-rouge">\arccos</code> and <code class="language-plaintext highlighter-rouge">\arctan</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$ A\sin(\theta) + D $$
+</code></pre></div></div>
+<p>\[A\sin(\theta) + D\]</p>
+
+<p><strong>Logarithms</strong></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">\log</code> command is used to write a logarithm. You can add a base using the subscript command <code class="language-plaintext highlighter-rouge">_</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$ 3\log_2 (x) + y_1 $$
+</code></pre></div></div>
+<p>\[3\log_2 (x) + y_1\]</p>
+
+<p><strong>Other Useful Commands</strong></p>
+
+<p>Insert plain text using the <code class="language-plaintext highlighter-rouge">\text{}</code> command. Sometimes, the regular brackets aren’t tall enough to cover a fraction. In this case, use the <code class="language-plaintext highlighter-rouge">\left(</code> and <code class="language-plaintext highlighter-rouge">\right)</code> commands together to fix it.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$ x^2 + 3 \approx 3 \text{ (for small x)} $$
+</code></pre></div></div>
+<p>\[ x^2 + 3 \approx 3 \text{ (for small x)} \]</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$ \text{Short brackets: } (\frac{1}{2}) $$
+$$ \text{Tall brackets: } \left(\frac{1}{2}\right) $$
+</code></pre></div></div>
+<p>\[ \text{Short brackets: } (\frac{1}{2}) \]
+\[ \text{Tall brackets: } \left(\frac{1}{2}\right) \]</p>
+
+<h2 id="formatting-using-environments">Formatting Using Environments</h2>
+
+<p>These commands are used in display math mode for additional control over the formatting of equations. The first environment is the <strong>Align</strong> environment. Shown below is some example code and output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$ \begin{align}
+    &amp;x^2 + 4x + 12 \\
+    = &amp;x^2 + 4x + 4 + 8 \\
+    = &amp;(x + 2)^2 + 8
+\end{align} $$
+</code></pre></div></div>
+<p>\[ \begin{align}&amp;x^2 + 4x + 12 \\ =\:&amp;x^2 + 4x + 4 + 8 \\ =\:&amp;(x + 2)^2 + 8\end{align} \]</p>
+
+<ul>
+  <li>Notice how the left edge of each equation is aligned.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">&amp;</code> symbol is used to set the alignment point.</li>
+  <li>Use two backslashes <code class="language-plaintext highlighter-rouge">\\</code> to create a new line.</li>
+</ul>
+
+<p>The <strong>Cases</strong> environment is used to create piecewise functions. See the example code and output below:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$ f(x) = \begin{cases}
+    x^2 + 5 &amp; x &lt; 0 \\
+    3x &amp; 0 \leq x \leq 2 \\
+    6 &amp; x &gt; 2 \\
+\end{case} $$
+</code></pre></div></div>
+<p>\[ f(x) = \begin{cases} x^2 + 5 &amp; x &lt; 0 \\ 3x &amp; 0 \leq x \leq 2 \\ 6 &amp; x &gt; 2 \\ \end{cases} \]</p>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">&amp;</code> symbol is still used to set an alignment point.</li>
+  <li>Cases are separated by a two backslashes <code class="language-plaintext highlighter-rouge">\\</code>.</li>
+  <li>Any symbols before the <code class="language-plaintext highlighter-rouge">\begin{cases}</code> will be vertically centered.</li>
+</ul>
+
 
 		</main>
 		<footer>
