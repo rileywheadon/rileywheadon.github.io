@@ -22,15 +22,15 @@ h1 { color: #eceff4; font-size: 26px; }
 
 h2 { color: #e5e9f0; font-size: 24px; }
 
-a { color: #8fbcbb; text-decoration: none; font-size: 20px; }
+a { color: #8fbcbb; text-decoration: none; font-size: 18px; }
 
 a:hover { text-decoration: underline; }
 
-p, li { color: #d8dee9; font-size: 20px; line-height: 1.75em; }
+p, li { color: #d8dee9; font-size: 19px; line-height: 1.75em; }
 
-code { color: #d8dee9; font-size: 18px; font-family: 'Roboto Mono', monospace; }
+code { color: #d8dee9; font-size: 16px; font-family: 'Roboto Mono', monospace; }
 
-.language-plaintext { background-color: #3b4252; padding: 5px 10px 5px 10px; border-radius: 5px; }
+.language-plaintext { background-color: #3b4252; padding: 5px; border-radius: 5px; }
 
 footer { margin-top: auto; width: 50%; padding: 0% 25% 3% 25%; }
 

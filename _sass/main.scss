@@ -79,7 +79,7 @@ h2 {
 a {
 	color: $nord7;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 a:hover {
@@ -88,19 +88,19 @@ a:hover {
 
 p, li {
 	color: $nord4;
-	font-size: 20px;
+	font-size: 19px;
 	line-height: 1.75em;
 }
 
 code {
 	color: $nord4;
-	font-size: 18px;
+	font-size: 16px;
 	font-family: 'Roboto Mono', monospace;
 }
 
 .language-plaintext {
 	background-color: $nord1;
-	padding: 5px 10px 5px 10px;
+	padding: 5px;
 	border-radius: 5px;
 }
 
