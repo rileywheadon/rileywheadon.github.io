@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Fast Typesetting with Obsidian Plugins</title>
+		<title>riley's blog</title>
 		<link rel="stylesheet" href="/assets/css/styles.css">
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 		<script id="MathJax-script" async
@@ -13,7 +13,7 @@
 		<main>
 			<div class = "nav">
 	<nav>
-		<a href="/" class="left">riley's blog</a>
+		<a href="/" class="left">home</a>
 		<a href="/about.html" class="right">about</a>
 	</nav>
 	<br><br>
@@ -23,7 +23,86 @@
 
 			<h1 id="fast-typesetting-with-obsidian-plugins">Fast Typesetting with Obsidian Plugins</h1>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p><em>This guide is a follow up to my <a href="latex-guide.html">last post</a> about typesetting with LaTeX.</em></p>
+
+<h2 id="the-problem">The Problem</h2>
+
+<p>If you’ve ever prepared a document with LaTeX before, you know that it can be a long and frustrating process. The language is built to create scientific papers, and it comes equipped to deal with the detail that one would expect from such publications. But the cost of precision is time, and virtually nothing in LaTeX is designed to be done quickly.</p>
+
+<p>Every command requires the inconveniently located backslash key, and you’ll probably get carpal tunnel from open and closing the curly brackets every five keystrokes. To make matters worse, common symbols often require five or more characters, like <code class="language-plaintext highlighter-rouge">\partial</code>, <code class="language-plaintext highlighter-rouge">\mathbb{R}</code>, or <code class="language-plaintext highlighter-rouge">\Leftrightarrow</code>.</p>
+
+<p>However, not all is lost. This article will show you how to transform LaTeX from a hulking monolith of mathematical symbosl and formatting commands to a simple, customizable tool for taking notes in math and science classes.</p>
+
+<h2 id="the-solution">The Solution</h2>
+
+<p>In 2019, the late <a href="https://castel.dev/">Gilles Castel</a> published an excellent blog post on his system for taking notes using LaTeX and Vim. Instead of typing the commands by hand, he used a snippet program to autocomplete symbols as he typed. If you’re familiar with configuring Vim and want to try this, the original article is <a href="https://castel.dev/post/lecture-notes-1/">here</a>. A more detailed guide, written by Elijian Mastnak, can be found <a href="https://www.ejmastnak.com/tutorials/vim-latex/intro/">here</a>.</p>
+
+<p>However, not everyone wants to learn Vim. For the less technically inclined, there’s the <a href="https://github.com/artisticat1/obsidian-latex-suite">Obsidian LaTeX Suite</a>, which can be installed using the following steps:</p>
+<ol>
+  <li>Open the settings menu in Obsidian</li>
+  <li>Go to the community plugins tab and make sure that “Restricted Mode” is off.</li>
+  <li>Click “Browse”, then search for, install, and enable the Obsidian LaTeX Suite.</li>
+</ol>
+
+<p>To check that it was installed correctly, open a new note and type <code class="language-plaintext highlighter-rouge">mk</code>. If the text is automatically repalced with <code class="language-plaintext highlighter-rouge">$ $</code>, then the plugin is installed correctly.</p>
+
+<h2 id="writing-snippets">Writing Snippets</h2>
+
+<p>For a more thorough introduction to writing snippets, I recommend you read the <a href="https://github.com/artisticat1/obsidian-latex-suite">documentation</a>. To create and remove snippets, open the Obsidian settings menu, then click on the “Latex Suite” tab under “Community Plugins”.</p>
+
+<p>A snippet is a javascript object that looks like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{trigger: "...", replacement: "...", options: "..."}
+</code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">trigger</code> is the series of keystrokes that will activate the snippet.</li>
+  <li><code class="language-plaintext highlighter-rouge">replacement</code> is the text that will replace the trigger. If you’re writing LaTeX, remember to escape backslashes by writing <code class="language-plaintext highlighter-rouge">\\</code> instead of <code class="language-plaintext highlighter-rouge">\</code>.
+    <ul>
+      <li>The replacement can contain any number of tabstops, which are included using the characters <code class="language-plaintext highlighter-rouge">$0</code>, <code class="language-plaintext highlighter-rouge">$1</code>, etc. Upon snippet activation, the cursor will be moved to the first tabstop.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">options</code> is a string of characters that contains the settings:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">m</code> stands for “math mode”. If this setting is enabled, the snippet will only activate in math mode (either inline or display).</li>
+      <li><code class="language-plaintext highlighter-rouge">A</code> stands for “autocomplete”. If this setting is enabled, the trigger will be replaced immediately. Otherwise, you will have to press TAB.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For example, here is a simple snippet that replaces <code class="language-plaintext highlighter-rouge">ff</code> with <code class="language-plaintext highlighter-rouge">\frac</code> command:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    trigger: "ff",
+    replacement: "\\frac{$0}{$1}",
+    options: "mA"
+}
+</code></pre></div></div>
+<ul>
+  <li>Note that we use escape the backslash character using <code class="language-plaintext highlighter-rouge">\\</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">"mA"</code> means the snippet will activate automatically in math mode.</li>
+  <li>Upon snipet activation, the cursor will move to the <code class="language-plaintext highlighter-rouge">$0</code> tabstop. If you press tab again, it will move to the <code class="language-plaintext highlighter-rouge">$1</code> tabstop.</li>
+</ul>
+
+<h2 id="building-a-system">Building a System</h2>
+
+<p>Now, go to back to the settings menu, and <em>delete all the default snippets</em>. If you want to remember your snippets and build a system that works for you, it’s best to write them yourself. Of course, feel free to check the default snippets for ideas, many of them are very good.</p>
+
+<p>Here are some of my recommendations:</p>
+<ul>
+  <li>Every snippet should autocomplete using the <code class="language-plaintext highlighter-rouge">"A"</code> option. The only time I don’t do this is for large snippets like matrices and environments.</li>
+  <li>Snippets should be 2 or 3 characters long, maybe 4.</li>
+  <li>Snippets should not use groups of letters that are commonly used in mathematical expressions. For example, an autocopmleting snippet with the trigger <code class="language-plaintext highlighter-rouge">dx</code> will frequently activate when you don’t want it to.</li>
+  <li>Use capital letters and special characters to differentiate snippets.</li>
+  <li>ONLY create snippets when you need them. Remember that every additional snippet creates more possibilities for errors.</li>
+</ul>
+
+<p>If you’re in need of ideas, here are some of the snippets I use:</p>
+<ul>
+  <li>Short greek letters use their full name as a trigger (i.e. <code class="language-plaintext highlighter-rouge">pi</code> for <code class="language-plaintext highlighter-rouge">\pi</code>)</li>
+  <li>Long greek letters use a semicolon followed by the first letter of the command as a trigger (i.e. <code class="language-plaintext highlighter-rouge">;l</code> for <code class="language-plaintext highlighter-rouge">\lambda</code>).</li>
+  <li>Mathematical sets use double capital letters (i.e. <code class="language-plaintext highlighter-rouge">RR</code> for \(\mathbb{R}\))</li>
+  <li>Arrows use the corresponding combination of <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">=</code>, <code class="language-plaintext highlighter-rouge">&lt;</code> and <code class="language-plaintext highlighter-rouge">&gt;</code>. For example, I use the trigger <code class="language-plaintext highlighter-rouge">=&gt;</code> for the \(\Rightarrow\) symbol.</li>
+  <li>I use <code class="language-plaintext highlighter-rouge">neq</code>, <code class="language-plaintext highlighter-rouge">geq</code>, and <code class="language-plaintext highlighter-rouge">leq</code> for the inequalities \(\neq, \geq,\) and \(\leq\).</li>
+  <li>I use the trigger <code class="language-plaintext highlighter-rouge">tt</code> for the <code class="language-plaintext highlighter-rouge">\text{}</code> command and <code class="language-plaintext highlighter-rouge">ff</code> for <code class="language-plaintext highlighter-rouge">\frac{}</code>.</li>
+</ul>
 
 		</main>
 		<footer>

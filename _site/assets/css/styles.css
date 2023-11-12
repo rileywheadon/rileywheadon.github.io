@@ -14,13 +14,13 @@
 
 hr { color: #434c5e; }
 
-body { background-color: #2e3440; font-family: 'Roboto', sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+body { background-color: #242933; font-family: 'Roboto', sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
 
 main { padding: 3% 25% 0% 25%; }
 
-h1 { color: #e5e9f0; font-size: 26px; }
+h1 { color: #eceff4; font-size: 26px; }
 
-h2 { color: #d8dee9; font-size: 24px; }
+h2 { color: #e5e9f0; font-size: 24px; }
 
 a { color: #8fbcbb; text-decoration: none; font-size: 20px; }
 
@@ -30,7 +30,7 @@ p, li { color: #d8dee9; font-size: 20px; line-height: 1.75em; }
 
 code { color: #d8dee9; font-size: 18px; font-family: 'Roboto Mono', monospace; }
 
-.language-plaintext { background-color: #434c5e; padding: 5px 10px 5px 10px; border-radius: 5px; }
+.language-plaintext { background-color: #3b4252; padding: 5px 10px 5px 10px; border-radius: 5px; }
 
 footer { margin-top: auto; width: 50%; padding: 0% 25% 3% 25%; }
 
