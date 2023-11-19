@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>riley's blog</title>
+		<link rel="stylesheet" href="/assets/css/styles.css">
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async
+			  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+		</script>
+	</head>
+	<body>
+		<main>
+			<div class = "nav">
+	<nav>
+		<a href="/" class="left">home</a>
+		<a href="/about.html" class="right">about</a>
+	</nav>
+	<br><br>
+	<hr>
+</div>
+<br>
+
+			<h1 id="how-i-use-obsidian">How I Use Obsidian</h1>
+
+<p>You can view my previous posts on Obsidian here:</p>
+<ul>
+  <li><a href="why-obsidian.html">Why Obsidian?</a></li>
+  <li><a href="fast-typesetting.html">Fast Typesetting with Obsidian Plugins</a></li>
+</ul>
+
+<p>This post is meant to provide a general overview of how I use Obsidian to take notes in my university classes.</p>
+
+<h2 id="the-fuzzy-finder">The Fuzzy Finder</h2>
+
+<p>The <strong>Fuzzy Finder</strong> is Obsidian’s mechanism for searching your vault. You can open it by pressing <code class="language-plaintext highlighter-rouge">CMD + O</code>, which should bring up a window like this:</p>
+
+<div style="text-align: center"><img width="600" src="/assets/images/fuzzy-finder.png" /></div>
+
+<p>(If you’re wondering, the folder numbers are <a href="https://johnnydecimal.com">Johnny Decimal</a>)</p>
+
+<p>When I type in the search bar, Obsidian will locate notes by folder and title <em>simultaneously</em>. Then, by pressing <code class="language-plaintext highlighter-rouge">CMD + ENTER</code>, I can open the top search result in a new tab.</p>
+
+<p>Why is a search bar like this so useful?</p>
+
+<p>The fuzzy finder is built into Obsidian, which means I can create, delete, and switch between notes without having to open a file explorer. This means that I can easily edit multiple notes at the same time.</p>
+
+<p>Because the fuzzy finder displays the file path, it’s possible to differentiate notes by both their title <em>and</em> their location. Consider the following file tree:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/MATH-100
+	formula-sheet
+/PHYS-131
+	formula-sheet
+</code></pre></div></div>
+
+<p>If I search for <code class="language-plaintext highlighter-rouge">MATH 100 formula sheet</code>, the fuzzy finder will only display the file in the MATH 100 folder, which allows me to have many notes with the same title across my vault.</p>
+
+<h2 id="one-idea-one-note">One Idea, One Note</h2>
+
+<p>Because the fuzzy finder allows me to search my entire vault,  I want my file paths and note titles to be as intuitive as possible. The rule I use for this is <em>one idea, one note</em>.</p>
+
+<p>In practice, this is how this apply this principle:</p>
+<ul>
+  <li>Do not create separate notes for examples. Instead, include them under a <code class="language-plaintext highlighter-rouge">## Examples</code> header in the note for the concept it is demonstrating.</li>
+  <li>A note should not contain more than one formula.</li>
+  <li>A note should not explain pre-requisite concepts. Instead, provide a link to another note.</li>
+  <li>Notes should be as long as needed to explain the concept, but no longer.</li>
+</ul>
+
+<h2 id="creating-a-class">Creating a Class</h2>
+
+<p>Every class has the following folders:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Notes</code>, which contains exclusively markdown notes. This folder has a file with the star emoji (⭐️) which contains the class time, class location, and links to other notes.</li>
+  <li><code class="language-plaintext highlighter-rouge">Figures</code>, which has any pictures that I use in my notes.</li>
+  <li><code class="language-plaintext highlighter-rouge">Resources</code>, which contains any information related to the course like class slides, class notes, or the textbook.</li>
+</ul>
+
+<h1 id="useful-plugins">Useful Plugins</h1>
+
+<h2 id="obsidian-latex-suite">Obsidian LaTeX Suite</h2>
+
+<p>The <a href="https://github.com/artisticat1/obsidian-latex-suite">Obsidian LaTeX Suite</a> allows me to easily type <a href="latex-guide.html">LaTeX</a> using a set of customisable snippets. I wrote a separate guide on using the plugin, which can be found <a href="fast-typesetting.html">here</a>.</p>
+
+<h2 id="filename-heading-sync">Filename Heading Sync</h2>
+
+<p>This plugin automatically changes the name of the file to the first heading, and vice versa. I recommend this plugin because it forces you to implement the one idea, one note rule.</p>
+
+<h2 id="advanced-tables">Advanced Tables</h2>
+
+<p>Markdown tables are pretty awful to use by default. This plugin provides some excel-like functionality such as:</p>
+<ul>
+  <li>Using <code class="language-plaintext highlighter-rouge">TAB</code> to cycle through cells</li>
+  <li>Hotkeys to add and remove rows / columns</li>
+  <li>Automatic alignment of table border characters</li>
+</ul>
+
+		</main>
+		<footer>
+	<hr>
+	<p class="footer-text left"><a href="mailto:rileywheadon@gmail.com" class="footer-text">rileywheadon@gmail.com</a></p>
+	<p class="footer-text right">made with <a href="https://jekyllrb.com/" class="footer-text">Jekyll</a> and <a href="https://www.nordtheme.com/" class="footer-text">Nord</a></p>
+</footer> 
+
+	</body>
+</html>
+
