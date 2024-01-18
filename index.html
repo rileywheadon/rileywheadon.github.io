@@ -3,7 +3,18 @@ layout: default
 title: Home
 ---
 
-<h1>Posts</h1>
+<h1>projects</h1>
+
+{% for item in site.data.projects %}
+<div class="post">
+	<p class = "post-date">{{ item.date }}</p>
+	<a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
+	  {{ item.name }}
+	</a>
+</div>
+{% endfor %}
+
+<h1>blog</h1>
 
 {% for item in site.data.posts %}
 <div class="post">

@@ -3,7 +3,7 @@ layout: default
 title: Typesetting Mathematics using LaTeX
 ---
 
-# Typeset Mathematics using LaTeX
+# latex-guide
 
 If you read my <a href="why-obsidian.html">previous post</a> about why I use <a href="https://obsidian.md/">Obsidian</a>, you might be curious how to actually use LaTeX for formatting mathematical equations. This guide is intended for people using Obsidian or another markdown based text editor, and does not include information on document preparation. If you'd like to use LaTeX natively, I'd recommend you consult the [LaTeX Wiki](https://en.wikibooks.org/wiki/LaTeX/Introduction).
 

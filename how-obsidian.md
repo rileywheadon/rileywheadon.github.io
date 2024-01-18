@@ -1,4 +1,4 @@
-# How I Use Obsidian 
+# how-obsidian
 
 You can view my previous posts on Obsidian here:
 - <a href="why-obsidian.html">Why Obsidian?</a>
